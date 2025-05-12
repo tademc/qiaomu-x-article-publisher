@@ -9,7 +9,7 @@ const Categories = () => {
   const isMobile = useIsMobile();
   const [activeTab, setActiveTab] = useState("todas");
   
-  // Las categorías con sus respectivos iconos
+  // Las categorías con sus respectivos iconos y rutas
   const categories = [
     {
       id: "deportes",
@@ -17,7 +17,8 @@ const Categories = () => {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-dumbbell"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg>
       ),
-      color: "brand-green"
+      color: "brand-green",
+      route: "/categorias/deportes"
     },
     {
       id: "arte",
@@ -25,7 +26,8 @@ const Categories = () => {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-palette"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
       ),
-      color: "brand-purple"
+      color: "brand-purple",
+      route: "/categorias/arte"
     },
     {
       id: "tecnologia",
@@ -33,7 +35,8 @@ const Categories = () => {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-laptop"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
       ),
-      color: "brand-green"
+      color: "brand-green",
+      route: "/categorias/tecnologia"
     },
     {
       id: "gastronomia",
@@ -41,7 +44,8 @@ const Categories = () => {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-utensils"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2"/><path d="M18 15V2"/><path d="M21 15a3 3 0 1 1-6 0v-3h6v3Z"/></svg>
       ),
-      color: "brand-purple"
+      color: "brand-purple",
+      route: "/categorias/gastronomia"
     },
     {
       id: "naturaleza",
@@ -49,7 +53,8 @@ const Categories = () => {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-tree-pine"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2a1 1 0 0 1-.8-1.7L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
       ),
-      color: "brand-green"
+      color: "brand-green",
+      route: "/categorias/naturaleza"
     },
     {
       id: "literatura",
@@ -57,7 +62,8 @@ const Categories = () => {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       ),
-      color: "brand-purple"
+      color: "brand-purple",
+      route: "/categorias/literatura"
     }
   ];
 
@@ -220,12 +226,13 @@ const Categories = () => {
               title={category.title}
               icon={category.icon}
               color={category.color}
-              onClick={() => setActiveTab(category.id)}
+              to={category.route}
               className={activeTab === category.id ? "ring-2 ring-brand-purple" : ""}
             />
           ))}
         </div>
         
+        {/* Mantenemos las pestañas para la página principal */}
         <div className="mt-12">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="w-full flex flex-wrap justify-center mb-6 bg-transparent space-x-2">
