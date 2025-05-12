@@ -1,5 +1,6 @@
 
 import GroupCard from "./GroupCard";
+import { Button } from "@/components/Button";
 
 const PopularGroups = () => {
   // Datos de ejemplo para los grupos populares
