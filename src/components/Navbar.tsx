@@ -4,12 +4,34 @@ import { Button } from "@/components/ui/button";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const scrollToSection = (id: string) => {
+    setIsMenuOpen(false);
+    
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      // Damos tiempo para que la navegación se complete
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -18,7 +40,7 @@ const Navbar = () => {
           <div className="bg-brand-purple text-white p-2 rounded-full">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <span className="text-xl font-heading font-bold text-gray-900">EncuentrosAmigos</span>
+          <span className="text-xl font-heading font-bold text-gray-900">Quórum</span>
         </Link>
         
         {isMobile ? (
@@ -30,18 +52,30 @@ const Navbar = () => {
             {isMenuOpen && (
               <div className="fixed inset-0 top-16 bg-white z-40 p-4 animate-fade-in">
                 <nav className="flex flex-col gap-4">
-                  <Link to="/explore" className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md">
-                    Explorar grupos
-                  </Link>
-                  <Link to="/events" className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md">
-                    Eventos cercanos
-                  </Link>
-                  <Link to="/create" className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md">
-                    Crear grupo
-                  </Link>
-                  <Link to="/messages" className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md">
+                  <button 
+                    onClick={() => scrollToSection('categorias')} 
+                    className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md text-left"
+                  >
+                    Explorar
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('eventos')} 
+                    className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md text-left"
+                  >
+                    Eventos
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('crear-grupo')} 
+                    className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md text-left"
+                  >
+                    Crear
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('mensajes')} 
+                    className="px-4 py-3 text-lg font-medium text-gray-700 hover:bg-muted rounded-md text-left"
+                  >
                     Mensajes
-                  </Link>
+                  </button>
                   <hr className="my-2" />
                   <Button className="btn-primary w-full">Iniciar sesión</Button>
                   <Button variant="outline" className="w-full">Registrarse</Button>
@@ -52,18 +86,30 @@ const Navbar = () => {
         ) : (
           <div className="flex items-center gap-6">
             <nav className="flex items-center gap-6">
-              <Link to="/explore" className="text-gray-700 hover:text-brand-purple font-medium">
-                Explorar grupos
-              </Link>
-              <Link to="/events" className="text-gray-700 hover:text-brand-purple font-medium">
-                Eventos cercanos
-              </Link>
-              <Link to="/create" className="text-gray-700 hover:text-brand-purple font-medium">
-                Crear grupo
-              </Link>
-              <Link to="/messages" className="text-gray-700 hover:text-brand-purple font-medium">
+              <button 
+                onClick={() => scrollToSection('categorias')} 
+                className="text-gray-700 hover:text-brand-purple font-medium"
+              >
+                Explorar
+              </button>
+              <button 
+                onClick={() => scrollToSection('eventos')} 
+                className="text-gray-700 hover:text-brand-purple font-medium"
+              >
+                Eventos
+              </button>
+              <button 
+                onClick={() => scrollToSection('crear-grupo')} 
+                className="text-gray-700 hover:text-brand-purple font-medium"
+              >
+                Crear
+              </button>
+              <button 
+                onClick={() => scrollToSection('mensajes')} 
+                className="text-gray-700 hover:text-brand-purple font-medium"
+              >
                 Mensajes
-              </Link>
+              </button>
             </nav>
             <div className="flex items-center gap-3">
               <Button variant="ghost">Iniciar sesión</Button>
