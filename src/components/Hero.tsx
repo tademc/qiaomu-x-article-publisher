@@ -5,6 +5,13 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const Hero = () => {
   const isMobile = useIsMobile();
   
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section className="relative bg-gradient-to-br from-brand-purple-light to-white py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -18,10 +25,17 @@ const Hero = () => {
               existentes o crea el tuyo propio y comienza a vivir experiencias reales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button className="btn-primary text-lg py-6 px-8">
+              <Button 
+                className="btn-primary text-lg py-6 px-8"
+                onClick={() => scrollToSection('categorias')}
+              >
                 Explorar grupos
               </Button>
-              <Button variant="outline" className="text-lg py-6 px-8">
+              <Button 
+                variant="outline" 
+                className="text-lg py-6 px-8"
+                onClick={() => scrollToSection('crear-grupo')}
+              >
                 Crear un grupo
               </Button>
             </div>

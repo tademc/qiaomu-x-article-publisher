@@ -1,6 +1,6 @@
 
 import GroupCard from "./GroupCard";
-import { Button } from "@/components/ui/button";
+import { Button } from "./Button";
 
 const PopularGroups = () => {
   // Datos de ejemplo para los grupos populares
@@ -34,6 +34,13 @@ const PopularGroups = () => {
     }
   ];
   
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -60,7 +67,9 @@ const PopularGroups = () => {
         </div>
         
         <div className="mt-10 text-center">
-          <Button className="btn-primary">Ver todos los grupos</Button>
+          <Button className="btn-primary" onClick={() => scrollToSection('categorias')}>
+            Ver todos los grupos
+          </Button>
         </div>
       </div>
     </section>
