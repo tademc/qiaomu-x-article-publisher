@@ -7,11 +7,12 @@ interface CategoryCardProps {
   icon: React.ReactNode;
   color: string;
   className?: string;
+  onClick?: () => void;
 }
 
-const CategoryCard = ({ title, icon, color, className }: CategoryCardProps) => {
+const CategoryCard = ({ title, icon, color, className, onClick }: CategoryCardProps) => {
   return (
-    <Card className={cn("card-hover cursor-pointer", className)}>
+    <Card className={cn("card-hover cursor-pointer", className)} onClick={onClick}>
       <CardContent className="p-6 flex flex-col items-center text-center">
         <div 
           className={cn(
